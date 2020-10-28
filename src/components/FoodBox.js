@@ -6,7 +6,8 @@ const FoodBox = (props) => {
         <div>
             <p>{props.content.p}</p>
         </div>
-    )
+        )
+       
 }
 
 export default FoodBox;
