@@ -9,7 +9,8 @@ class App extends React.Component {
 
   state = {
     foods: data,
-    showForm: false
+    showForm: false,
+    query: ''
   }
 
   addFoodHandler = (food) => {
@@ -22,13 +23,16 @@ class App extends React.Component {
 
 
   render() {
+    const filteredFoods = this.state.foods.filter;
     return(
       <div className="App">
+          <input className="input is-focused" type="text" value={this.state.query} placeholder="Focused input" onChange={(e) => this.setState({query: e.target.value})}/>
+        
         {this.state.showForm?
         <AddFood addfood = {this.addFoodHandler} />
         :
         <button onClick={(e) => this.setState({showForm:true})}>ADD FOOD</button>}
-        {this.state.foods.map((food, index) => {
+        {filteredFoods.map((food, index) => {
           return (<FoodBox {...food} key={index} />)
         })}
       </div>
