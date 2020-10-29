@@ -1,32 +1,13 @@
 
 import React from 'react';
-import foods from '../foods.json';
-import AddFood from './AddFood';
 
 
 class FoodBox extends React.Component {
 
-    state = {
-      foods : foods,
-    }
-
-    addFoodHandler = (food) => {
-
-      this.setState({
-        foods: [...this.state.foods, food]
-      })
-    }
-
-    showForm = () => {
-        return(
-          <AddFood food = {this.AddFoodHandler} />
-        )
-    }
 
     render() {
         return(
             <div className="box">
-            <button onClick={this.showForm}>ADD A FOOD</button>
               <article className="media">
                 <div className="media-left">
                   <figure className="image is-64x64">
