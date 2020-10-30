@@ -23,7 +23,7 @@ class App extends React.Component {
 
 
   render() {
-    const filteredFoods = this.state.foods.filter;
+    const filteredFoods = this.state.foods.filter(food => food.name.toLowerCase().includes(this.state.query));
     return(
       <div className="App">
           <input className="input is-focused" type="text" value={this.state.query} placeholder="Focused input" onChange={(e) => this.setState({query: e.target.value})}/>
